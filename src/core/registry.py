@@ -5,8 +5,10 @@ Handles loading and managing software registry
 
 import json
 import os
+import requests
 from typing import Dict, Any, Optional, List
 from pathlib import Path
+from .config import Config
 
 class Registry:
     """Manages the software registry"""
@@ -22,13 +24,30 @@ class Registry:
         self._load_registry()
     
     def _load_registry(self):
-        """Load registry data from file"""
+        """Load registry data from file or remote URL"""
         try:
+            # First try local file
             if self.registry_path.exists():
                 with open(self.registry_path, 'r', encoding='utf-8') as f:
                     self._registry_data = json.load(f)
-            else:
-                self._registry_data = {}
+                return
+            
+            # If local file doesn't exist, try remote URL
+            try:
+                config = Config()
+                remote_url = config.get("remote", {}).get("registry_url")
+                if remote_url:
+                    import requests
+                    response = requests.get(remote_url, timeout=10)
+                    response.raise_for_status()
+                    self._registry_data = response.json()
+                    return
+            except Exception as e:
+                print(f"Warning: Could not load remote registry: {e}")
+            
+            # Fallback to empty registry
+            self._registry_data = {}
+            
         except Exception as e:
             raise Exception(f"Failed to load registry from {self.registry_path}: {e}")
     

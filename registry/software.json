@@ -5,6 +5,7 @@
     "latest_version": "7.0.2",
     "homepage": "https://www.mongodb.com/",
     "license": "SSPL",
+    "category": "Database",
     "platforms": {
       "windows": {
         "download_url": "https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.2-signed.msi",
@@ -33,27 +34,28 @@
   "nodejs": {
     "name": "Node.js",
     "description": "JavaScript runtime built on Chrome's V8 JavaScript engine",
-    "latest_version": "18.17.0",
+    "latest_version": "20.17.0",
     "homepage": "https://nodejs.org/",
     "license": "MIT",
+    "category": "Development",
     "platforms": {
       "windows": {
-        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi",
+        "download_url": "https://nodejs.org/dist/v20.17.0/node-v20.17.0-x64.msi",
         "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
         "env_vars": {
           "PATH": "C:\\Program Files\\nodejs"
         }
       },
       "linux": {
-        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz",
-        "install_command": "tar -xf \"{installer}\" && sudo cp -R node-v18.17.0-linux-x64/* /usr/local/",
+        "download_url": "https://nodejs.org/dist/v20.17.0/node-v20.17.0-linux-x64.tar.xz",
+        "install_command": "tar -xf \"{installer}\" && sudo cp -R node-v20.17.0-linux-x64/* /usr/local/",
         "env_vars": {
           "PATH": "/usr/local/bin"
         }
       },
       "macos": {
-        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0.pkg",
-        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "download_url": "https://nodejs.org/dist/v20.17.0/node-v20.17.0-darwin-x64.tar.gz",
+        "install_command": "tar -xf \"{installer}\" && sudo cp -R node-v20.17.0-darwin-x64/* /usr/local/",
         "env_vars": {
           "PATH": "/usr/local/bin"
         }
@@ -66,11 +68,12 @@
     "description": "Advanced open source relational database",
     "latest_version": "15.4",
     "homepage": "https://www.postgresql.org/",
-    "license": "PostgreSQL License",
+    "license": "PostgreSQL",
+    "category": "Database",
     "platforms": {
       "windows": {
         "download_url": "https://get.enterprisedb.com/postgresql/postgresql-15.4-1-windows-x64.exe",
-        "install_command": "\"{installer}\" --mode unattended --unattendedmodeui none",
+        "install_command": "\"{installer}\" --mode unattended --unattendedmodeui none --disable-components stackbuilder",
         "env_vars": {
           "PATH": "C:\\Program Files\\PostgreSQL\\15\\bin"
         }
@@ -86,7 +89,7 @@
         "download_url": "https://get.enterprisedb.com/postgresql/postgresql-15.4-1-osx.dmg",
         "install_command": "sudo installer -pkg \"{installer}\" -target /",
         "env_vars": {
-          "PATH": "/Library/PostgreSQL/15/bin"
+          "PATH": "/Applications/PostgreSQL 15/bin"
         }
       }
     },
@@ -97,7 +100,8 @@
     "description": "Platform for developing, shipping, and running applications in containers",
     "latest_version": "24.0.5",
     "homepage": "https://www.docker.com/",
-    "license": "Apache License 2.0",
+    "license": "Apache 2.0",
+    "category": "DevOps",
     "platforms": {
       "windows": {
         "download_url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
@@ -108,7 +112,7 @@
       },
       "linux": {
         "download_url": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce_24.0.5-1~ubuntu.22.04~jammy_amd64.deb",
-        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "install_command": "sudo apt-get update && sudo apt-get install -y docker.io",
         "env_vars": {
           "PATH": "/usr/bin"
         }
@@ -129,16 +133,17 @@
     "latest_version": "2.42.0",
     "homepage": "https://git-scm.com/",
     "license": "GPL-2.0",
+    "category": "Development",
     "platforms": {
       "windows": {
         "download_url": "https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe",
-        "install_command": "\"{installer}\" /VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS",
+        "install_command": "\"{installer}\" /VERYSILENT /NORESTART",
         "env_vars": {
           "PATH": "C:\\Program Files\\Git\\bin"
         }
       },
       "linux": {
-        "download_url": "",
+        "download_url": "https://github.com/git/git/archive/v2.42.0.tar.gz",
         "install_command": "sudo apt-get update && sudo apt-get install -y git",
         "env_vars": {
           "PATH": "/usr/bin"
@@ -160,16 +165,17 @@
     "latest_version": "3.11.5",
     "homepage": "https://www.python.org/",
     "license": "PSF",
+    "category": "Development",
     "platforms": {
       "windows": {
         "download_url": "https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe",
         "install_command": "\"{installer}\" /quiet InstallAllUsers=1 PrependPath=1",
         "env_vars": {
-          "PATH": "C:\\Program Files\\Python311;C:\\Program Files\\Python311\\Scripts"
+          "PATH": "C:\\Python311;C:\\Python311\\Scripts"
         }
       },
       "linux": {
-        "download_url": "",
+        "download_url": "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz",
         "install_command": "sudo apt-get update && sudo apt-get install -y python3 python3-pip",
         "env_vars": {
           "PATH": "/usr/bin"
@@ -191,6 +197,7 @@
     "latest_version": "1.82.2",
     "homepage": "https://code.visualstudio.com/",
     "license": "MIT",
+    "category": "Development",
     "platforms": {
       "windows": {
         "download_url": "https://update.code.visualstudio.com/1.82.2/win32-x64-user/stable",
@@ -208,12 +215,421 @@
       },
       "macos": {
         "download_url": "https://update.code.visualstudio.com/1.82.2/darwin-universal/stable",
-        "install_command": "unzip \"{installer}\" && cp -R \"Visual Studio Code.app\" /Applications/",
+        "install_command": "unzip \"{installer}\" && sudo cp -R \"Visual Studio Code.app\" /Applications/",
         "env_vars": {
           "PATH": "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
         }
       }
     },
     "verify_command": "code --version"
+  },
+  "chrome": {
+    "name": "Google Chrome",
+    "description": "Fast, secure web browser by Google",
+    "latest_version": "117.0.5938.92",
+    "homepage": "https://www.google.com/chrome/",
+    "license": "Proprietary",
+    "category": "Browser",
+    "platforms": {
+      "windows": {
+        "download_url": "https://dl.google.com/chrome/install/GoogleChromeStandaloneEnterprise64.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "google-chrome --version"
+  },
+  "firefox": {
+    "name": "Mozilla Firefox",
+    "description": "Free and open-source web browser",
+    "latest_version": "117.0.1",
+    "homepage": "https://www.mozilla.org/firefox/",
+    "license": "MPL-2.0",
+    "category": "Browser",
+    "platforms": {
+      "windows": {
+        "download_url": "https://download.mozilla.org/?product=firefox-117.0.1-SSL&os=win64&lang=en-US",
+        "install_command": "\"{installer}\" /S",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://download.mozilla.org/?product=firefox-117.0.1-SSL&os=linux64&lang=en-US",
+        "install_command": "sudo apt-get update && sudo apt-get install -y firefox",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://download.mozilla.org/?product=firefox-117.0.1-SSL&os=osx&lang=en-US",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "firefox --version"
+  },
+  "mysql": {
+    "name": "MySQL",
+    "description": "Popular open-source relational database",
+    "latest_version": "8.0.34",
+    "homepage": "https://www.mysql.com/",
+    "license": "GPL-2.0",
+    "category": "Database",
+    "platforms": {
+      "windows": {
+        "download_url": "https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.34.0.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-server_8.0.34-1ubuntu22.04_amd64.deb-bundle.tar",
+        "install_command": "sudo apt-get update && sudo apt-get install -y mysql-server",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.34-macos13-x86_64.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/usr/local/mysql/bin"
+        }
+      }
+    },
+    "verify_command": "mysql --version"
+  },
+  "redis": {
+    "name": "Redis",
+    "description": "In-memory data structure store",
+    "latest_version": "7.2.1",
+    "homepage": "https://redis.io/",
+    "license": "BSD-3-Clause",
+    "category": "Database",
+    "platforms": {
+      "windows": {
+        "download_url": "https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\Redis"
+        }
+      },
+      "linux": {
+        "download_url": "https://download.redis.io/releases/redis-7.2.1.tar.gz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y redis-server",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://download.redis.io/releases/redis-7.2.1.tar.gz",
+        "install_command": "brew install redis",
+        "env_vars": {
+          "PATH": "/opt/homebrew/bin"
+        }
+      }
+    },
+    "verify_command": "redis-server --version"
+  },
+  "nginx": {
+    "name": "Nginx",
+    "description": "High-performance web server and reverse proxy",
+    "latest_version": "1.24.0",
+    "homepage": "https://nginx.org/",
+    "license": "BSD-2-Clause",
+    "category": "Web Server",
+    "platforms": {
+      "windows": {
+        "download_url": "http://nginx.org/download/nginx-1.24.0.zip",
+        "install_command": "powershell -Command \"Expand-Archive -Path '{installer}' -DestinationPath 'C:\\nginx'\"",
+        "env_vars": {
+          "PATH": "C:\\nginx\\nginx-1.24.0"
+        }
+      },
+      "linux": {
+        "download_url": "http://nginx.org/download/nginx-1.24.0.tar.gz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y nginx",
+        "env_vars": {
+          "PATH": "/usr/sbin"
+        }
+      },
+      "macos": {
+        "download_url": "http://nginx.org/download/nginx-1.24.0.tar.gz",
+        "install_command": "brew install nginx",
+        "env_vars": {
+          "PATH": "/opt/homebrew/bin"
+        }
+      }
+    },
+    "verify_command": "nginx -v"
+  },
+  "apache": {
+    "name": "Apache HTTP Server",
+    "description": "Open-source HTTP server",
+    "latest_version": "2.4.57",
+    "homepage": "https://httpd.apache.org/",
+    "license": "Apache-2.0",
+    "category": "Web Server",
+    "platforms": {
+      "windows": {
+        "download_url": "https://www.apachelounge.com/download/VS17/binaries/httpd-2.4.57-240613-win64-VS17.zip",
+        "install_command": "powershell -Command \"Expand-Archive -Path '{installer}' -DestinationPath 'C:\\Apache24'\"",
+        "env_vars": {
+          "PATH": "C:\\Apache24\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://archive.apache.org/dist/httpd/httpd-2.4.57.tar.gz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y apache2",
+        "env_vars": {
+          "PATH": "/usr/sbin"
+        }
+      },
+      "macos": {
+        "download_url": "https://archive.apache.org/dist/httpd/httpd-2.4.57.tar.gz",
+        "install_command": "brew install httpd",
+        "env_vars": {
+          "PATH": "/opt/homebrew/bin"
+        }
+      }
+    },
+    "verify_command": "httpd -v"
+  },
+  "java": {
+    "name": "Java Development Kit",
+    "description": "Java SE Development Kit",
+    "latest_version": "21.0.0",
+    "homepage": "https://www.oracle.com/java/",
+    "license": "Oracle No-Fee Terms and Conditions",
+    "category": "Development",
+    "platforms": {
+      "windows": {
+        "download_url": "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {
+          "JAVA_HOME": "C:\\Program Files\\Java\\jdk-21",
+          "PATH": "C:\\Program Files\\Java\\jdk-21\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y openjdk-21-jdk",
+        "env_vars": {
+          "JAVA_HOME": "/usr/lib/jvm/java-21-openjdk-amd64",
+          "PATH": "/usr/lib/jvm/java-21-openjdk-amd64/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://download.oracle.com/java/21/latest/jdk-21_macos-x64_bin.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "JAVA_HOME": "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home",
+          "PATH": "/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin"
+        }
+      }
+    },
+    "verify_command": "java -version"
+  },
+  "terraform": {
+    "name": "Terraform",
+    "description": "Infrastructure as Code tool",
+    "latest_version": "1.5.7",
+    "homepage": "https://www.terraform.io/",
+    "license": "MPL-2.0",
+    "category": "DevOps",
+    "platforms": {
+      "windows": {
+        "download_url": "https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_windows_amd64.zip",
+        "install_command": "powershell -Command \"Expand-Archive -Path '{installer}' -DestinationPath 'C:\\terraform'\"",
+        "env_vars": {
+          "PATH": "C:\\terraform"
+        }
+      },
+      "linux": {
+        "download_url": "https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip",
+        "install_command": "unzip \"{installer}\" && sudo mv terraform /usr/local/bin/",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_darwin_amd64.zip",
+        "install_command": "brew install terraform",
+        "env_vars": {
+          "PATH": "/opt/homebrew/bin"
+        }
+      }
+    },
+    "verify_command": "terraform --version"
+  },
+  "kubectl": {
+    "name": "Kubectl",
+    "description": "Kubernetes command-line tool",
+    "latest_version": "1.28.2",
+    "homepage": "https://kubernetes.io/",
+    "license": "Apache-2.0",
+    "category": "DevOps",
+    "platforms": {
+      "windows": {
+        "download_url": "https://dl.k8s.io/release/v1.28.2/bin/windows/amd64/kubectl.exe",
+        "install_command": "powershell -Command \"Copy-Item '{installer}' 'C:\\kubectl\\kubectl.exe'\"",
+        "env_vars": {
+          "PATH": "C:\\kubectl"
+        }
+      },
+      "linux": {
+        "download_url": "https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl",
+        "install_command": "chmod +x \"{installer}\" && sudo mv \"{installer}\" /usr/local/bin/kubectl",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://dl.k8s.io/release/v1.28.2/bin/darwin/amd64/kubectl",
+        "install_command": "brew install kubectl",
+        "env_vars": {
+          "PATH": "/opt/homebrew/bin"
+        }
+      }
+    },
+    "verify_command": "kubectl version --client"
+  },
+  "slack": {
+    "name": "Slack",
+    "description": "Team collaboration tool",
+    "latest_version": "4.34.119",
+    "homepage": "https://slack.com/",
+    "license": "Proprietary",
+    "category": "Communication",
+    "platforms": {
+      "windows": {
+        "download_url": "https://downloads.slack-edge.com/releases/windows/4.34.119/prod/x64/SlackSetup.exe",
+        "install_command": "\"{installer}\" /S",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://downloads.slack-edge.com/releases/linux/4.34.119/prod/x64/slack-desktop-4.34.119-amd64.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://downloads.slack-edge.com/releases/macos/4.34.119/prod/x64/Slack-4.34.119-macOS.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "slack --version"
+  },
+  "discord": {
+    "name": "Discord",
+    "description": "Voice, video and text communication service",
+    "latest_version": "1.0.9016",
+    "homepage": "https://discord.com/",
+    "license": "Proprietary",
+    "category": "Communication",
+    "platforms": {
+      "windows": {
+        "download_url": "https://dl.discordapp.net/apps/win/1.0.9016/DiscordSetup.exe",
+        "install_command": "\"{installer}\" /S",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://dl.discordapp.net/apps/linux/0.0.32/discord-0.0.32.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://dl.discordapp.net/apps/osx/1.0.9016/Discord.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "discord --version"
+  },
+  "vlc": {
+    "name": "VLC Media Player",
+    "description": "Free and open-source multimedia player",
+    "latest_version": "3.0.18",
+    "homepage": "https://www.videolan.org/vlc/",
+    "license": "GPL-2.0",
+    "category": "Media",
+    "platforms": {
+      "windows": {
+        "download_url": "https://get.videolan.org/vlc/3.0.18/win64/vlc-3.0.18-win64.exe",
+        "install_command": "\"{installer}\" /L=1033 /S",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://get.videolan.org/vlc/3.0.18/vlc-3.0.18.tar.xz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y vlc",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://get.videolan.org/vlc/3.0.18/macosx/vlc-3.0.18-intel64.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "vlc --version"
+  },
+  "virtualbox": {
+    "name": "VirtualBox",
+    "description": "Virtualization software",
+    "latest_version": "7.0.10",
+    "homepage": "https://www.virtualbox.org/",
+    "license": "GPL-2.0",
+    "category": "Virtualization",
+    "platforms": {
+      "windows": {
+        "download_url": "https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0.10-158379-Win.exe",
+        "install_command": "\"{installer}\" --silent",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://download.virtualbox.org/virtualbox/7.0.10/virtualbox-7.0_7.0.10-158379~Ubuntu~jammy_amd64.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0.10-158379-OSX.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "vboxmanage --version"
+  },
+  "postman": {
+    "name": "Postman",
+    "description": "API development and testing platform",
+    "latest_version": "10.18.9",
+    "homepage": "https://www.postman.com/",
+    "license": "Proprietary",
+    "category": "Development",
+    "platforms": {
+      "windows": {
+        "download_url": "https://dl.pstmn.io/download/latest/win64",
+        "install_command": "\"{installer}\" --silent",
+        "env_vars": {}
+      },
+      "linux": {
+        "download_url": "https://dl.pstmn.io/download/latest/linux64",
+        "install_command": "sudo snap install postman",
+        "env_vars": {}
+      },
+      "macos": {
+        "download_url": "https://dl.pstmn.io/download/latest/osx_64",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {}
+      }
+    },
+    "verify_command": "postman --version"
   }
 }

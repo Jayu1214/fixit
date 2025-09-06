@@ -12,7 +12,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="easy-installer",
-    version="1.0.3",
+    version="1.1.0",
     author="FixIt Team",
     author_email="team@fixit.dev",
     description="Cross-platform software installation framework",
