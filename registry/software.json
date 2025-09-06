@@ -1,0 +1,219 @@
+{
+  "mongodb": {
+    "name": "MongoDB",
+    "description": "Document-oriented NoSQL database",
+    "latest_version": "7.0.2",
+    "homepage": "https://www.mongodb.com/",
+    "license": "SSPL",
+    "platforms": {
+      "windows": {
+        "download_url": "https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.2-signed.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\MongoDB\\Server\\7.0\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://repo.mongodb.org/apt/ubuntu/dists/jammy/mongodb-org/7.0/multiverse/binary-amd64/mongodb-org-server_7.0.2_amd64.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-7.0.2.tgz",
+        "install_command": "tar -zxvf \"{installer}\" && sudo cp -R mongodb-macos-x86_64-7.0.2/ /usr/local/mongodb",
+        "env_vars": {
+          "PATH": "/usr/local/mongodb/bin"
+        }
+      }
+    },
+    "verify_command": "mongod --version"
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "description": "JavaScript runtime built on Chrome's V8 JavaScript engine",
+    "latest_version": "18.17.0",
+    "homepage": "https://nodejs.org/",
+    "license": "MIT",
+    "platforms": {
+      "windows": {
+        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi",
+        "install_command": "msiexec /i \"{installer}\" /quiet /norestart",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\nodejs"
+        }
+      },
+      "linux": {
+        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz",
+        "install_command": "tar -xf \"{installer}\" && sudo cp -R node-v18.17.0-linux-x64/* /usr/local/",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://nodejs.org/dist/v18.17.0/node-v18.17.0.pkg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      }
+    },
+    "verify_command": "node --version"
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "description": "Advanced open source relational database",
+    "latest_version": "15.4",
+    "homepage": "https://www.postgresql.org/",
+    "license": "PostgreSQL License",
+    "platforms": {
+      "windows": {
+        "download_url": "https://get.enterprisedb.com/postgresql/postgresql-15.4-1-windows-x64.exe",
+        "install_command": "\"{installer}\" --mode unattended --unattendedmodeui none",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\PostgreSQL\\15\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://ftp.postgresql.org/pub/source/v15.4/postgresql-15.4.tar.gz",
+        "install_command": "sudo apt-get update && sudo apt-get install -y postgresql postgresql-contrib",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://get.enterprisedb.com/postgresql/postgresql-15.4-1-osx.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/Library/PostgreSQL/15/bin"
+        }
+      }
+    },
+    "verify_command": "psql --version"
+  },
+  "docker": {
+    "name": "Docker",
+    "description": "Platform for developing, shipping, and running applications in containers",
+    "latest_version": "24.0.5",
+    "homepage": "https://www.docker.com/",
+    "license": "Apache License 2.0",
+    "platforms": {
+      "windows": {
+        "download_url": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
+        "install_command": "\"{installer}\" install --quiet",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce_24.0.5-1~ubuntu.22.04~jammy_amd64.deb",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://desktop.docker.com/mac/main/amd64/Docker.dmg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      }
+    },
+    "verify_command": "docker --version"
+  },
+  "git": {
+    "name": "Git",
+    "description": "Distributed version control system",
+    "latest_version": "2.42.0",
+    "homepage": "https://git-scm.com/",
+    "license": "GPL-2.0",
+    "platforms": {
+      "windows": {
+        "download_url": "https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe",
+        "install_command": "\"{installer}\" /VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\Git\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "",
+        "install_command": "sudo apt-get update && sudo apt-get install -y git",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://sourceforge.net/projects/git-osx-installer/files/git-2.42.0-intel-universal-mavericks.dmg/download",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/usr/local/git/bin"
+        }
+      }
+    },
+    "verify_command": "git --version"
+  },
+  "python": {
+    "name": "Python",
+    "description": "High-level programming language",
+    "latest_version": "3.11.5",
+    "homepage": "https://www.python.org/",
+    "license": "PSF",
+    "platforms": {
+      "windows": {
+        "download_url": "https://www.python.org/ftp/python/3.11.5/python-3.11.5-amd64.exe",
+        "install_command": "\"{installer}\" /quiet InstallAllUsers=1 PrependPath=1",
+        "env_vars": {
+          "PATH": "C:\\Program Files\\Python311;C:\\Program Files\\Python311\\Scripts"
+        }
+      },
+      "linux": {
+        "download_url": "",
+        "install_command": "sudo apt-get update && sudo apt-get install -y python3 python3-pip",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://www.python.org/ftp/python/3.11.5/python-3.11.5-macos11.pkg",
+        "install_command": "sudo installer -pkg \"{installer}\" -target /",
+        "env_vars": {
+          "PATH": "/usr/local/bin"
+        }
+      }
+    },
+    "verify_command": "python --version"
+  },
+  "vscode": {
+    "name": "Visual Studio Code",
+    "description": "Free source-code editor developed by Microsoft",
+    "latest_version": "1.82.2",
+    "homepage": "https://code.visualstudio.com/",
+    "license": "MIT",
+    "platforms": {
+      "windows": {
+        "download_url": "https://update.code.visualstudio.com/1.82.2/win32-x64-user/stable",
+        "install_command": "\"{installer}\" /VERYSILENT /NORESTART /MERGETASKS=!runcode",
+        "env_vars": {
+          "PATH": "C:\\Users\\%USERNAME%\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        }
+      },
+      "linux": {
+        "download_url": "https://update.code.visualstudio.com/1.82.2/linux-deb-x64/stable",
+        "install_command": "sudo dpkg -i \"{installer}\" && sudo apt-get install -f",
+        "env_vars": {
+          "PATH": "/usr/bin"
+        }
+      },
+      "macos": {
+        "download_url": "https://update.code.visualstudio.com/1.82.2/darwin-universal/stable",
+        "install_command": "unzip \"{installer}\" && cp -R \"Visual Studio Code.app\" /Applications/",
+        "env_vars": {
+          "PATH": "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+        }
+      }
+    },
+    "verify_command": "code --version"
+  }
+}
