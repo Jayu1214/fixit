@@ -11,8 +11,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="fixit-installer",
-    version="1.0.0",
+    name="easy-installer",
+    version="1.0.3",
     author="FixIt Team",
     author_email="team@fixit.dev",
     description="Cross-platform software installation framework",
@@ -43,10 +43,10 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "fixit=fixit:main",
+            "easy-installer=easy_installer:main",
         ],
     },
-    scripts=["fixit.py"],
+    scripts=[],
     include_package_data=True,
     package_data={
         "": ["registry/*.json"],

@@ -1,0 +1,19 @@
+# PyPI Upload Instructions
+========================
+
+1. Get API Tokens:
+   - PyPI: https://pypi.org/manage/account/token/
+   - TestPyPI: https://test.pypi.org/manage/account/token/
+
+2. When prompted for password, use your API token (starts with pypi-)
+
+3. Test upload to TestPyPI first:
+   twine upload --repository testpypi dist/*
+
+4. If successful, upload to real PyPI:
+   twine upload dist/*
+
+5. After upload, people can install with:
+   pip install fixit-installer
+
+Note: Your package name is "fixit-installer" not "fixit" (which was taken)
